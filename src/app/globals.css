@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-bg: #0a0e13;
+  --color-panel: #11161d;
+  --color-raised: #171e27;
+  --color-line: #232c38;
+  --color-ink: #e7edf4;
+  --color-muted: #8a97a8;
+  --color-accent: #34d399;
+  --color-accent-strong: #10b981;
+  --color-on-accent: #04261a;
+  --color-hot: #fb7185;
+  --color-warm: #fbbf24;
+  --color-cold: #60a5fa;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-line bg-panel;
+  }
+  .btn {
+    @apply inline-flex h-9 cursor-pointer items-center justify-center gap-2 rounded-lg border border-line bg-raised px-3 text-sm font-medium whitespace-nowrap text-ink transition-colors hover:border-muted/50 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply border-transparent bg-accent text-on-accent hover:border-transparent hover:bg-accent-strong;
+  }
+  .btn-ghost {
+    @apply border-transparent bg-transparent text-muted hover:border-transparent hover:bg-raised hover:text-ink;
+  }
+  .btn-danger {
+    @apply border-hot/30 bg-hot/10 text-hot hover:border-hot/60;
+  }
+  .btn-sm {
+    @apply h-7 gap-1.5 rounded-md px-2 text-xs;
+  }
+  .input {
+    @apply h-9 w-full rounded-lg border border-line bg-bg px-3 text-sm text-ink outline-none placeholder:text-muted/60 focus:border-accent/70;
+  }
+  textarea.input {
+    @apply h-auto py-2 leading-relaxed;
+  }
+  .label {
+    @apply mb-1 block text-xs font-medium text-muted;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-md border border-line bg-raised px-1.5 py-0.5 text-[11px] leading-4 whitespace-nowrap text-muted;
+  }
+  .badge-dor {
+    @apply border-hot/25 bg-hot/10 text-hot;
+  }
+  .badge-positivo {
+    @apply border-accent/25 bg-accent/10 text-accent;
+  }
+  .page-title {
+    @apply text-xl font-semibold tracking-tight;
+  }
+  .page-sub {
+    @apply mt-1 text-sm text-muted;
+  }
+}

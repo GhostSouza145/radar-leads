@@ -1,0 +1,28 @@
+# dependências
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+*.tsbuildinfo
+
+# variáveis de ambiente: nunca versionar (só o exemplo)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# testes
+/coverage
+
+# diversos
+.DS_Store
+Thumbs.db
+*.pem
+*.log
+*.tmp.*
